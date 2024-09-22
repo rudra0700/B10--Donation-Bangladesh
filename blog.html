@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme= "light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <!-- daysi ui + tailwind cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- font awesome kit -->
+    <script src="https://kit.fontawesome.com/1e4c682169.js" crossorigin="anonymous"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                "primary-color": '#B4F461',
+              }
+            }
+          }
+        }
+      </script>
+
+    <style>
+  .font-inter{
+    font-family: "Inter", sans-serif;
+    font-weight: normal;
+  }
+    </style>
+     
+</head>
+<body class="font-inter">
+    <header class="container mx-auto">
+        <nav class="flex justify-between items-center">
+            <button class="px-8 py-2 bg-primary-color font-bold rounded-md">Blog</button>
+            <div class="flex items-center gap-4">
+                <img src="./assets/logo.png" alt="logo" class="hidden md:block">
+                <h5 class="font-bold hidden md:block">Donate Bangladesh</h5>
+            </div>
+            <div class="flex gap-2">
+                <img src="./assets/coin.png" alt="coin img">
+                <span class="font-semibold text-gray-500">5500</span>
+                <span class="text-gray-500">BDT</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mt-8">
+      <section class="max-w-6xl mx-auto mt-8">
+        <div class="flex items-center gap-2">
+            <h5 class="text-4xl font-bold">Important FAQ</h5>
+            <i class="fa-regular fa-circle-question text-3xl"></i>
+        </div>
+
+        <!-- faq  -->
+         <div class="mt-8 space-y-2">
+             <div class="collapse collapse-arrow bg-base-200">
+                 <input type="radio" name="my-accordion-2" checked="checked" />
+                 <div class="collapse-title text-xl font-medium">What is document object model?</div>
+                 <div class="collapse-content">
+                   <p></p>
+                 </div>
+               </div>
+               <div class="collapse collapse-arrow bg-base-200">
+                 <input type="radio" name="my-accordion-2" />
+                 <div class="collapse-title text-xl font-medium">How do you select an element from DOM</div>
+                 <div class="collapse-content">
+                   <p>hello</p>
+                 </div>
+               </div>
+               <div class="collapse collapse-arrow bg-base-200">
+                 <input type="radio" name="my-accordion-2" />
+                 <div class="collapse-title text-xl font-medium">What is the event delegation in the context of DOM</div>
+                 <div class="collapse-content">
+                   <p>hello</p>
+                 </div>
+               </div> 
+                <div class="collapse collapse-arrow bg-base-200">
+                 <input type="radio" name="my-accordion-2" />
+                 <div class="collapse-title text-xl font-medium">How do you manipulate an elements attributes and styles use the DOM</div>
+                 <div class="collapse-content">
+                   <p>hello</p>
+                 </div>
+               </div>
+         </div>
+
+      </section>
+    </main>
+</body>
+</html>
