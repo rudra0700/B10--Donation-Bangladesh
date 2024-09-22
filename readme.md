@@ -13,28 +13,28 @@
 ## Design
 
 - **Navbar**: Create a visually appealing navbar with the following structure:
-  - Logo positioned in the middle.
-  - "Blog" button on the left.
-  - Account balance with a coin icon on the right.
-  - "Donation" and "History" buttons in the center (as per Figma).
+  - Logo positioned in the middle. //DONE
+  - "Blog" button on the left. //DONE
+  - Account balance with a coin icon on the right. //DONE
+  - "Donation" and "History" buttons in the center (as per Figma). //DONE
 - **Donation Cards**: Create 3 donation cards with the following details:
-  - Image on the left.
-  - Donation title.
-  - Donation info.
-  - Current donation amount.
-  - Input field for donation amount.
-  - Button for submitting the donation.
-- **History Section**: Initially hidden and empty.
+  - Image on the left. //DONE
+  - Donation title. //DONE
+  - Donation info. //DONE
+  - Current donation amount. //DONE
+  - Input field for donation amount. //DONE
+  - Button for submitting the donation. //DONE
+- **History Section**: Initially hidden and empty. //DONE
 
 ## Functionalities
 
 - **Donation and History Button Functionality**:
-  - Clicking the "History" button will hide the donation data and display the history.
-  - Clicking the "Donation" button will hide the history and display the donation data.
+  - Clicking the "History" button will hide the donation data and display the history. //DONE
+  - Clicking the "Donation" button will hide the history and display the donation data. //DONE
 - **Donation Functionality for Each Card**:
   - When the "Donate Now" button is clicked:
-    - The donation input will be deducted from the total account balance, and the updated balance will be shown.
-    - The card’s current donation amount will increase.
+    - The donation input will be deducted from the total account balance, and the updated balance will be shown. //DONE
+    - The card’s current donation amount will increase. //DONE
     - A meaningful notification will be added to the History section.
 - **Input Validation**:
   - Show an alert if invalid data is found and stop the transaction.
@@ -45,8 +45,8 @@
 - **History Section**:
   - The history section will display transaction notifications, including:
     - Date and time of the transaction.
-    - Donation amount.
-    - Donation name.
+    - Donation amount. //DONE
+    - Donation name. //DONE
 
 ## Challenges
 
