@@ -1,147 +1,109 @@
+
+// cart 1
 document.getElementById("cart-one-btn").addEventListener("click", () => {
-  const inputFieldValue = Number(document.getElementById("amount-field").value);
+  const inputFieldValue = getInputValue("amount-field");
 
   if(isNaN(inputFieldValue) || document.getElementById("amount-field").value === '' || inputFieldValue <= 0){
-   return  alert("Invalid Donation Amount")
+   return  showAlert("Invalid Donation Amount")
   }
 
-  const noakhaliDonationAmount = Number(
-    document.getElementById("noakhali-donation-amount").innerText
-  );
-  const totalDonationAmount = inputFieldValue + noakhaliDonationAmount;
-  document.getElementById("noakhali-donation-amount").innerText =
-    totalDonationAmount;
+  const noakhaliDonationAmount = getInnerTextValue("noakhali-donation-amount")
 
-  const availableBalance = Number(
-    document.getElementById("available-balance").innerText
-  );
+  const totalDonationAmount = inputFieldValue + noakhaliDonationAmount;
+  updateInnerText("noakhali-donation-amount", totalDonationAmount)
+
+  const availableBalance = getInnerTextValue("available-balance");
 
   if(inputFieldValue > availableBalance){
-    return alert("you dont have sufficient balance")
+    return showAlert("you do not have sufficient balance to donate")
   }
-  const newAvailableBalance = availableBalance - inputFieldValue;
-  document.getElementById("available-balance").innerText = newAvailableBalance;
 
-  const historySection = document.getElementById("history-section");
-  const div = document.createElement("div");
-  div.classList.add("border-2", "rounded-lg", "p-5", "space-y-2");
+  const newAvailableBalance = updateBalance(availableBalance, inputFieldValue);
+  updateInnerText("available-balance", newAvailableBalance)
+
+  const historySection = getTheId("history-section")
+  const div = createElement("div")
+  addColors(div, "border-2", "rounded-lg", "p-5", "space-y-2")
   div.innerHTML = `
   <h4 class="font-bold">${inputFieldValue} Taka is Donated for famine-2024 at Noakhali, Bangladesh</h4>
   <p class="text-sm">${new Date()}</p>
   `;
   historySection.appendChild(div);
-  document.getElementById("amount-field").value = "";
+  updateInputValue("amount-field", "")
+
 });
 
 // cart 2
 
 document.getElementById("cart-two-btn").addEventListener("click", () => {
-  const inputFieldValue = Number(
-    document.getElementById("feni-amount-field").value
-  );
+  const inputFieldValue = getInputValue("feni-amount-field")
 
   if(isNaN(inputFieldValue) || document.getElementById("feni-amount-field").value === '' || inputFieldValue <= 0){
-    return  alert("Invalid Donation Amount")
+    return  showAlert("Invalid Donation Amount")
  
    }
 
-  const feniDonationAmount = Number(
-    document.getElementById("feni-donation-amount").innerText
-  );
+  const feniDonationAmount = getInnerTextValue("feni-donation-amount")
 
   const totalDonationAmount = inputFieldValue + feniDonationAmount;
-  document.getElementById("feni-donation-amount").innerText =
-    totalDonationAmount;
+    updateInnerText("feni-donation-amount", totalDonationAmount)
 
-  const availableBalance = Number(
-    document.getElementById("available-balance").innerText
-  );
+    const availableBalance = getInnerTextValue("available-balance");
 
   if(inputFieldValue > availableBalance){
-    return alert("you dont have sufficient balance")
+    return showAlert("you do not have sufficient balance to donate")
   }
 
-  const newAvailableBalance = availableBalance - inputFieldValue;
-  document.getElementById("available-balance").innerText = newAvailableBalance;
+  const newAvailableBalance = updateBalance(availableBalance, inputFieldValue);
+  updateInnerText("available-balance", newAvailableBalance)
 
-  const historySection = document.getElementById("history-section");
-  const div = document.createElement("div");
-  div.classList.add("border-2", "rounded-lg", "p-5", "space-y-2");
+  const historySection = getTheId("history-section")
+  const div = createElement("div")
+  addColors(div, "border-2", "rounded-lg", "p-5", "space-y-2")
   div.innerHTML = `
   <h4 class="font-bold">${inputFieldValue} Taka is Donated for flood relief at feni, Bangladesh</h4>
-  <p class="text-sm">Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)</p>
+ <p class="text-sm">${new Date()}</p>
   `;
   historySection.appendChild(div);
-  document.getElementById("feni-amount-field").value = "";
+  updateInputValue("feni-amount-field", "")
 });
 
 // cart 3
 
 document.getElementById("cart-three-btn").addEventListener("click", () => {
-  const inputFieldValue = Number(
-    document.getElementById("quota-amount-field").value
-  );
+  const inputFieldValue = getInputValue("quota-amount-field")
 
-  if(isNaN(inputFieldValue) || document.getElementById("amount-field").value === '' || inputFieldValue <= 0){
-    return  alert("Invalid Donation Amount")
+  if(isNaN(inputFieldValue) || document.getElementById("quota-amount-field").value === '' || inputFieldValue <= 0){
+    return  showAlert("Invalid Donation Amount")
    }
 
-  const quotaDonationAmount = Number(
-    document.getElementById("quota-donation-amount").innerText
-  );
+  const quotaDonationAmount = getInnerTextValue("quota-donation-amount")
 
   const totalDonationAmount = inputFieldValue + quotaDonationAmount;
-  document.getElementById("quota-donation-amount").innerText =
-    totalDonationAmount;
+    updateInnerText("quota-donation-amount", totalDonationAmount)
 
-  const availableBalance = Number(
-    document.getElementById("available-balance").innerText
-  );
+    const availableBalance = getInnerTextValue("available-balance");
 
   if(inputFieldValue > availableBalance){
-    return alert("you dont have sufficient balance")
+    return showAlert("you do not have sufficient balance to donate")
   }
 
-  const newAvailableBalance = availableBalance - inputFieldValue;
-  document.getElementById("available-balance").innerText = newAvailableBalance;
+  const newAvailableBalance = updateBalance(availableBalance, inputFieldValue);
+  updateInnerText("available-balance", newAvailableBalance)
 
-  const historySection = document.getElementById("history-section");
-  const div = document.createElement("div");
-  div.classList.add("border-2", "rounded-lg", "p-5", "space-y-2");
+  const historySection = getTheId("history-section")
+  const div = createElement("div")
+  addColors(div, "border-2", "rounded-lg", "p-5", "space-y-2")
   div.innerHTML = `
     <h4 class="font-bold">${inputFieldValue} Taka is Donated for injured in the Quota Movement, Bangladesh</h4>
-    <p class="text-sm">Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)</p>
+    <p class="text-sm">${new Date()}</p>
     `;
   historySection.appendChild(div);
-  document.getElementById("quota-amount-field").value = "";
+  updateInputValue("quota-amount-field", "");
 });
 
-document.getElementById("history-tab").addEventListener("click", () => {
-  const historyTab = document.getElementById("history-tab");
-  const donationTab = document.getElementById("donation-tab");
-  historyTab.classList.add("bg-primary-color");
-  donationTab.classList.remove("bg-primary-color");
+// history tab
 
-  const donationSection = document.getElementById("donation-section");
-  donationSection.classList.add("hidden");
 
-  const historySection = document.getElementById("history-section");
-  historySection.classList.remove("hidden");
-});
 
-document.getElementById("donation-tab").addEventListener("click", () => {
-  const historyTab = document.getElementById("history-tab");
-  const donationTab = document.getElementById("donation-tab");
-  historyTab.classList.remove("bg-primary-color");
-  donationTab.classList.add("bg-primary-color");
 
-  const donationSection = document.getElementById("donation-section");
-  donationSection.classList.remove("hidden");
-
-  const historySection = document.getElementById("history-section");
-  historySection.classList.add("hidden");
-});
-
-document.getElementById("blog-btn").addEventListener("click", () => {
-  window.location.href = "blog.html";
-});
