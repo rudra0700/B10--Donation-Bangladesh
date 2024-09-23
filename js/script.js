@@ -62,35 +62,35 @@ document.getElementById("cart-two-btn").addEventListener("click", () => {
 // cart 3
 
 document.getElementById("cart-three-btn").addEventListener("click", () => {
-    const inputFieldValue = Number(
-      document.getElementById("quota-amount-field").value
-    );
-  
-    const quotaDonationAmount = Number(
-      document.getElementById("quota-donation-amount").innerText
-    );
-  
-    const totalDonationAmount = inputFieldValue + quotaDonationAmount;
-    document.getElementById("quota-donation-amount").innerText =
-      totalDonationAmount;
-  
-    const availableBalance = Number(
-      document.getElementById("available-balance").innerText
-    );
-  
-    const newAvailableBalance = availableBalance - inputFieldValue;
-    document.getElementById("available-balance").innerText = newAvailableBalance;
-  
-    const historySection = document.getElementById("history-section");
-    const div = document.createElement("div");
-    div.classList.add("border-2", "rounded-lg", "p-5", "space-y-2");
-    div.innerHTML = `
+  const inputFieldValue = Number(
+    document.getElementById("quota-amount-field").value
+  );
+
+  const quotaDonationAmount = Number(
+    document.getElementById("quota-donation-amount").innerText
+  );
+
+  const totalDonationAmount = inputFieldValue + quotaDonationAmount;
+  document.getElementById("quota-donation-amount").innerText =
+    totalDonationAmount;
+
+  const availableBalance = Number(
+    document.getElementById("available-balance").innerText
+  );
+
+  const newAvailableBalance = availableBalance - inputFieldValue;
+  document.getElementById("available-balance").innerText = newAvailableBalance;
+
+  const historySection = document.getElementById("history-section");
+  const div = document.createElement("div");
+  div.classList.add("border-2", "rounded-lg", "p-5", "space-y-2");
+  div.innerHTML = `
     <h4 class="font-bold">${inputFieldValue} Taka is Donated for injured in the Quota Movement, Bangladesh</h4>
     <p class="text-sm">Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)</p>
     `;
-    historySection.appendChild(div);
-    document.getElementById("quota-amount-field").value = "";
-  });
+  historySection.appendChild(div);
+  document.getElementById("quota-amount-field").value = "";
+});
 
 document.getElementById("history-tab").addEventListener("click", () => {
   const historyTab = document.getElementById("history-tab");
@@ -116,4 +116,8 @@ document.getElementById("donation-tab").addEventListener("click", () => {
 
   const historySection = document.getElementById("history-section");
   historySection.classList.add("hidden");
+});
+
+document.getElementById("blog-btn").addEventListener("click", () => {
+  window.location.href = "blog.html";
 });
