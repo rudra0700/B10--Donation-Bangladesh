@@ -39,12 +39,12 @@
 - **Input Validation**:
   - Show an alert if invalid data is found and stop the transaction.
   - Validate the donation amount:
-    - If the donation amount is greater than the account balance.
-    - If the input field contains an invalid number.
-    - If the input field is empty.
+    - If the donation amount is greater than the account balance. //DONE
+    - If the input field contains an invalid number. //DONE
+    - If the input field is empty. //DONE
 - **History Section**:
   - The history section will display transaction notifications, including:
-    - Date and time of the transaction.
+    - Date and time of the transaction. //DONE
     - Donation amount. //DONE
     - Donation name. //DONE
 
@@ -58,7 +58,7 @@
     3. What is event delegation in the context of the DOM, and why is it useful?
     4. How do you manipulate an element's attributes and styles using the DOM?
 - **Toggle Active Status**: Toggle the active status of the "Donation" and "History" buttons:
-  - Change the button color to indicate when it's active.
+  - Change the button color to indicate when it's active. //DONE
 - **Static Modal**: Display a static modal instead of an alert on a successful donation.
 - **Reusable Functions**: Use at least 2 common functions.
-- **Responsive Design**: Ensure the application is responsive for different screen sizes.
+- **Responsive Design**: Ensure the application is responsive for different screen sizes. //DONE

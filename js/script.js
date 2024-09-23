@@ -1,6 +1,9 @@
 document.getElementById("cart-one-btn").addEventListener("click", () => {
   const inputFieldValue = Number(document.getElementById("amount-field").value);
-  console.log(inputFieldValue);
+
+  if(isNaN(inputFieldValue) || document.getElementById("amount-field").value === '' || inputFieldValue <= 0){
+   return  alert("Invalid Donation Amount")
+  }
 
   const noakhaliDonationAmount = Number(
     document.getElementById("noakhali-donation-amount").innerText
@@ -12,6 +15,10 @@ document.getElementById("cart-one-btn").addEventListener("click", () => {
   const availableBalance = Number(
     document.getElementById("available-balance").innerText
   );
+
+  if(inputFieldValue > availableBalance){
+    return alert("you dont have sufficient balance")
+  }
   const newAvailableBalance = availableBalance - inputFieldValue;
   document.getElementById("available-balance").innerText = newAvailableBalance;
 
@@ -20,7 +27,7 @@ document.getElementById("cart-one-btn").addEventListener("click", () => {
   div.classList.add("border-2", "rounded-lg", "p-5", "space-y-2");
   div.innerHTML = `
   <h4 class="font-bold">${inputFieldValue} Taka is Donated for famine-2024 at Noakhali, Bangladesh</h4>
-  <p class="text-sm">Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)</p>
+  <p class="text-sm">${new Date()}</p>
   `;
   historySection.appendChild(div);
   document.getElementById("amount-field").value = "";
@@ -33,6 +40,11 @@ document.getElementById("cart-two-btn").addEventListener("click", () => {
     document.getElementById("feni-amount-field").value
   );
 
+  if(isNaN(inputFieldValue) || document.getElementById("feni-amount-field").value === '' || inputFieldValue <= 0){
+    return  alert("Invalid Donation Amount")
+ 
+   }
+
   const feniDonationAmount = Number(
     document.getElementById("feni-donation-amount").innerText
   );
@@ -44,6 +56,10 @@ document.getElementById("cart-two-btn").addEventListener("click", () => {
   const availableBalance = Number(
     document.getElementById("available-balance").innerText
   );
+
+  if(inputFieldValue > availableBalance){
+    return alert("you dont have sufficient balance")
+  }
 
   const newAvailableBalance = availableBalance - inputFieldValue;
   document.getElementById("available-balance").innerText = newAvailableBalance;
@@ -66,6 +82,10 @@ document.getElementById("cart-three-btn").addEventListener("click", () => {
     document.getElementById("quota-amount-field").value
   );
 
+  if(isNaN(inputFieldValue) || document.getElementById("amount-field").value === '' || inputFieldValue <= 0){
+    return  alert("Invalid Donation Amount")
+   }
+
   const quotaDonationAmount = Number(
     document.getElementById("quota-donation-amount").innerText
   );
@@ -77,6 +97,10 @@ document.getElementById("cart-three-btn").addEventListener("click", () => {
   const availableBalance = Number(
     document.getElementById("available-balance").innerText
   );
+
+  if(inputFieldValue > availableBalance){
+    return alert("you dont have sufficient balance")
+  }
 
   const newAvailableBalance = availableBalance - inputFieldValue;
   document.getElementById("available-balance").innerText = newAvailableBalance;
